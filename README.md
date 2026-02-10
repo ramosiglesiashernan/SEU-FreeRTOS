@@ -12,18 +12,18 @@ Este repositorio contiene documentación y ejemplos detallados sobre el uso de *
 
 ## Contenidos principales
 
-### 1. Gestión de tareas (*Tasks*)
+### 1. Gestión de tareas
 
 - **Creación de tareas**: uso de la API para instanciar procesos con diferentes niveles de prioridad.
 - **Estados de las tareas**: descripción de los estados `Running`, `Ready`, `Blocked` y `Suspended`.
 - **Planificador (*Scheduler*)**: configuración del planificador y comportamiento según la prioridad.
 
-### 2. Comunicación mediante colas (*Queues*)
+### 2. Comunicación y sincronización
 
 - **Implementación**: cómo crear y gestionar colas para el paso de mensajes entre tareas.
 - **Sincronización**: uso de colas para coordinar la ejecución de múltiples procesos.
 
-### 3. Planificación
+### 3. Algoritmos de planificación
 
 - Detalles sobre parámetros críticos como `configUSE_PREEMPTION` para habilitar la expulsión (*preemption*) de tareas.
 - Manejo de cambios de contexto, tanto en llamadas desde tareas como desde interrupciones (ISR), mediante la variable `pxHigherPriorityTaskWoken`.
@@ -34,7 +34,7 @@ Este repositorio contiene documentación y ejemplos detallados sobre el uso de *
   - **Temporizadores hardware** (vinculados al chip)
   - **Temporizadores software** (gestionados por el kernel)
 
-### 5. Gestión de interrupciones (*ISR*)
+### 5. Gestión de interrupciones
 
 En FreeRTOS, las interrupciones tienen prioridad absoluta sobre cualquier tarea. Una **ISR** siempre desalojará a la tarea en ejecución, independientemente de la prioridad de esta última.
 
