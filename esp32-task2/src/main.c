@@ -1,8 +1,8 @@
 #include <freertos/FreeRTOS.h>
 #include <freertos/task.h>
 
-#define TASK1_PRIORITY        1
-#define TASK2_PRIORITY        2
+#define TASK1_PRIORITY        3
+#define TASK2_PRIORITY        3
 #define TASK3_PRIORITY        3
 #define APP_MAIN_PRIORITY     5
 #define TASK_STACK_SIZE       2048   /* Words task stack size */
