@@ -38,7 +38,7 @@ void app_main()
     TaskHandle_t xHandleDisp = NULL;            
 
 	/* Create the queue set */
-    QueueSetHandle_t xQueueSet = ...;
+    QueueSetHandle_t xQueueSet = xQueueCreateSet(NUM_ACQ_SENSORS * HT_QUEUE_LENGTH);
 
     for (unsigned int i = 0; i < NUM_ACQ_SENSORS; i++)
     {
@@ -50,7 +50,7 @@ void app_main()
         }
 
 		/* Add the queue to the set */
-        ...;
+        xQueueAddToSet(xHTQueue[i], xQueueSet);
 
         t_SensorParam param;
         param.sensorID = i;
@@ -113,9 +113,9 @@ void HTDisplay(void * queueSet)
         t_HTreading HTreceived;
 
 		/* Select the queue */
-        QueueHandle_t queue = ...;
+        QueueHandle_t queue = (QueueHandle_t)xQueueSelectFromSet(xQueueSet, portMAX_DELAY);
 		/* Receive from the queue */
-        BaseType_t xStatus = ...;
+        BaseType_t xStatus = xQueueReceive(queue, &HTreceived, 0);
         if (xStatus == pdPASS)
         {
             printf("Sensor ID %d: Temperature %d°C, humidity %d%%\n", 
