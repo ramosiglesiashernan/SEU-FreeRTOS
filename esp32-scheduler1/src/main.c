@@ -4,9 +4,9 @@
 #include <math.h>
 #include <stdio.h>
 
-#define TASK1_PRIORITY        4
-#define TASK2_PRIORITY        3
-#define TASK3_PRIORITY        3
+#define TASK1_PRIORITY 4
+#define TASK2_PRIORITY 4
+#define TASK3_PRIORITY 4
 #define APP_MAIN_PRIORITY	    5
 #define TASK_STACK_SIZE       2048   /* Words task stack size */
 
